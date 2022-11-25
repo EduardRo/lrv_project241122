@@ -15,6 +15,13 @@ return new class extends Migration
     {
         Schema::create('invoice_contents', function (Blueprint $table) {
             $table->id();
+            $table->integer('invoice_id');
+            $table->string('description');
+            $table->string('unit');
+            $table->float('quantity',2);
+            $table->float('price',2);
+            $table->float('amount',2);
+            $table->float('vat',2);
             $table->timestamps();
         });
     }
