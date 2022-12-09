@@ -17,8 +17,8 @@ class ServiceFactory extends Factory
     public function definition()
     {
         return [
-            'title'=>$this->faker->text(5),
-            'description'=>$this->faker->realTextBetween(5,25),
+            'title'=>strtoupper($this->faker->text(5)),
+            'description'=>$this->faker->realTextBetween(5,15),
             'unit'=>'buc',
             'price'=>$this->faker->randomFloat(2,100,1000),
         ];

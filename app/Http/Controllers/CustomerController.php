@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Customer;
 use App\Http\Requests\StoreCustomerRequest;
 use App\Http\Requests\UpdateCustomerRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class CustomerController extends Controller
 {
@@ -16,6 +19,8 @@ class CustomerController extends Controller
     public function index()
     {
         //
+        $customers = DB::table('customers')->get();
+        return ($customers);
     }
 
     /**
