@@ -23,6 +23,8 @@ class CustomerController extends Controller
         return ($customers);
     }
 
+    
+
     /**
      * Show the form for creating a new resource.
      *
@@ -30,7 +32,8 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        //
+        $customers = DB::table('customers')->get();
+        return view('customer.createCustomer', ['customer'=>$customers]);
     }
 
     /**
