@@ -32,7 +32,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        $customers = DB::table('customers')->get();
+        $customers = DB::table('customers')->find(3);
         return view('customer.createCustomer', ['customer'=>$customers]);
     }
 

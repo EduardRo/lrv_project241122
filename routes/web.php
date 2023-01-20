@@ -22,3 +22,5 @@ Route::get('/customers', [CustomerController::class, 'index']
 );
 Route::get('/customers/create', [CustomerController::class, 'create']
 );
+Route::get('/customers/store', [CustomerController::class, 'store']
+);
