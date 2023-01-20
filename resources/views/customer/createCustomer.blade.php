@@ -39,7 +39,7 @@
             @endif
 
             <div>
-                <form method="POST" action="">
+                <form method="POST" action="{{ route('customers.store') }}">
                     @csrf
                     <input type="text" name="name" value="{{ old('name') }}">
                     <input type="text" name="description" value="{{ old('description') }}">
