@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\ServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,4 @@ Route::get('/customers/create', [CustomerController::class, 'create']
 Route::post('/customers/store', 'App\Http\Controllers\CustomerController@store')->name('customers.store');
 
 // Route::post('tasks', 'TaskController@store');
+Route::get('/services',[ServiceController::class, 'index']);
