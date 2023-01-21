@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Invoice;
 use App\Http\Requests\StoreInvoiceRequest;
 use App\Http\Requests\UpdateInvoiceRequest;
+use Illuminate\Support\Facades\DB;
 
 class InvoiceController extends Controller
 {
@@ -15,6 +16,8 @@ class InvoiceController extends Controller
      */
     public function index()
     {
+        $invoices = DB::table('invoices')->get();
+        return $invoices;
         
     }
 

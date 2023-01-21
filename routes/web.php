@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\ServiceController;
 
 /*
@@ -18,12 +19,15 @@ use App\Http\Controllers\ServiceController;
 Route::get('/', function () {
     return view('welcome');
 });
-
+// Customers --
 Route::get('/customers', [CustomerController::class, 'index']
 );
 Route::get('/customers/create', [CustomerController::class, 'create']
 );
 Route::post('/customers/store', 'App\Http\Controllers\CustomerController@store')->name('customers.store');
-
+// Services --
 // Route::post('tasks', 'TaskController@store');
 Route::get('/services',[ServiceController::class, 'index']);
+
+// Invoices ---
+Route::get('/invoices', [InvoiceController::class, 'index']);
