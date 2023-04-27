@@ -8,7 +8,7 @@ use App\Http\Requests\UpdateInvoiceRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
-use App\Models\InvoiceProduct;
+use App\Models\InvoiceContent;
 
 
 class InvoiceController extends Controller
@@ -82,7 +82,7 @@ class InvoiceController extends Controller
     // Save the invoice product data to the database
     foreach ($invoiceProductData as $productData) {
         $productData['invoice_id'] = $invoice->id;
-        InvoiceProduct::create($productData);
+        InvoiceContent::create($productData);
     }
     
     // Redirect the user back to the invoice index page
